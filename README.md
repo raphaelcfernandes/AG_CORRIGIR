@@ -1,2 +1,5 @@
-# AG_CORRIGIR
-Ta td fora de padrao essa chossa, arrumar pra subir publico
+# Genetic Algorithm
+
+Given the words send and more find out what money should be in terms of:
+
+send + more = money
