@@ -14,6 +14,7 @@
 #include <random>
 #include <sys/time.h> 
 #include <fstream>
+#include "src/individual.hpp"
 /*Termino includes*/
 
 /*Inicio defines*/
@@ -25,6 +26,8 @@
 #define Tmutacao 20
 #define Telitismo 20
 using namespace std;
+
+
 
 
 const int populationLine = Population + (Tcross*Population)/100;
