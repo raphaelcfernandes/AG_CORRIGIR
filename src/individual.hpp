@@ -1,5 +1,7 @@
 #ifndef CLASSES_INDIVIDUAL_H
 #define CLASSES_INDIVIDUAL_H
+#include <vector>
+#include <iostream>
 
 class Individual {
     public:

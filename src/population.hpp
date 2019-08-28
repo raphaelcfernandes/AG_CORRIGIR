@@ -1,6 +1,7 @@
 #ifndef CLASSES_POPULATION_H
 #define CLASSES_POPULATION_H
 #include "individual.hpp"
+#include <iostream>
 
 class Population {
     public:

@@ -56,6 +56,7 @@ int FitnessByLetter(vector<int> myint);
 /*Termino funcoes*/
 
 int main(){
+    Individual k;
     Population p;
     
     // std::srand(std::time(0));

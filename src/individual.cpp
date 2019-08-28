@@ -1,4 +1,6 @@
 #include "individual.hpp"
 
-Individual::Individual(){}
+Individual::Individual(){
+    std::cout<<" TESTEEEEEEEEEEEEEEEEEEEEEEe";
+}
 Individual::~Individual(){}
