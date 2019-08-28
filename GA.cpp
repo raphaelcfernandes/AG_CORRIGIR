@@ -14,7 +14,7 @@
 #include <random>
 #include <sys/time.h> 
 #include <fstream>
-#include "src/individual.hpp"
+#include "src/population.hpp"
 /*Termino includes*/
 
 /*Inicio defines*/
@@ -27,14 +27,11 @@
 #define Telitismo 20
 using namespace std;
 
-
-
-
 const int populationLine = Population + (Tcross*Population)/100;
-int Rtorneio=3;
-int _fitness=100000;
-int _round=0;
-typedef struct{
+int Rtorneio = 3;
+int _fitness = 100000;
+int _round = 0;
+typedef struct {
     int value,location;
 }Father;
 /*Termino defines*/
@@ -59,35 +56,37 @@ int FitnessByLetter(vector<int> myint);
 /*Termino funcoes*/
 
 int main(){
-    std::srand(std::time(0));
-    setbuf(stdout, NULL);
-    int population[populationLine][populationCol]={0},fathers_chosen[(Tcross*Population)/100][populationCol]={0};
-    vector<int>myint;
-    myint.clear();
-    int loop=0,g=0,execucoes=0;
-    float cont=0;
-    while(g<repeticoes){
-        myint.clear();
-        for(int i=0;i<10;i++)myint.push_back(i);
-        gerarPopInicial(myint,population);
-        loop=0;
-        while(loop<geracoes){
-            CreateRoulette(population,fathers_chosen);
-            //torneio(population,fathers_chosen);
-            PMX(fathers_chosen,population);
-            //cyclicCrossOver(fathers_chosen,population);
-            reinsercaoOrdenada(population);
-            //elitismo(population);
-           loop++;
-           if(population[0][10]==0){
-                cont++;
-                break; 
-            }
-        }
-        g++;
-    }        
-    cout<<cont/10<<"%"<<endl;
-    return 0;
+    Population p;
+    
+    // std::srand(std::time(0));
+    // setbuf(stdout, NULL);
+    // int population[populationLine][populationCol]={0},fathers_chosen[(Tcross*Population)/100][populationCol]={0};
+    // vector<int>myint;
+    // myint.clear();
+    // int loop=0,g=0,execucoes=0;
+    // float cont=0;
+    // while(g<repeticoes){
+    //     myint.clear();
+    //     for(int i=0;i<10;i++)myint.push_back(i);
+    //     gerarPopInicial(myint,population);
+    //     loop=0;
+    //     while(loop<geracoes){
+    //         CreateRoulette(population,fathers_chosen);
+    //         //torneio(population,fathers_chosen);
+    //         PMX(fathers_chosen,population);
+    //         //cyclicCrossOver(fathers_chosen,population);
+    //         reinsercaoOrdenada(population);
+    //         //elitismo(population);
+    //        loop++;
+    //        if(population[0][10]==0){
+    //             cont++;
+    //             break; 
+    //         }
+    //     }
+    //     g++;
+    // }        
+    // cout<<cont/10<<"%"<<endl;
+    // return 0;
 }
 
 void gerarPopInicial(vector<int> myint,int population[populationLine][populationCol]){
