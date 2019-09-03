@@ -4,11 +4,12 @@
 #include <iostream>
 
 class Individual {
+    std::vector<int> chromossome;
+    int fitness = 0;
+
     public:
-        Individual();
-        virtual ~Individual();
-    private:
-        std::vector<int> chromossome;
-        int fitness = 0;
+        Individual(std::vector<int>, int);
+        virtual ~Individual();    
+        void getChromossome();
 };
 #endif
